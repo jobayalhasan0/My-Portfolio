@@ -154,8 +154,10 @@ function filterProjects(category) {
         btn.classList.add('text-slate-400');
     });
 
-    event.currentTarget.classList.add('active', 'border-cyan-500/50', 'text-white');
-    event.currentTarget.classList.remove('text-slate-400');
+    if (window.event && window.event.currentTarget) {
+        window.event.currentTarget.classList.add('active', 'border-cyan-500/50', 'text-white');
+        window.event.currentTarget.classList.remove('text-slate-400');
+    }
 
     cards.forEach(card => {
         if (category === 'all' || card.classList.contains(category)) {
